@@ -1,0 +1,17 @@
+# Normalise les fins de ligne (cohérence Windows <-> Linux/VPS)
+* text=auto eol=lf
+
+# Scripts Windows : garder CRLF
+*.bat text eol=crlf
+*.cmd text eol=crlf
+
+# Le wrapper Maven (script shell) doit rester en LF
+mvnw text eol=lf
+
+# Fichiers binaires (jamais convertis)
+*.jar binary
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.docx binary
+*.pdf binary

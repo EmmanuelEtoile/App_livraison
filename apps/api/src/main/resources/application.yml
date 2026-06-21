@@ -1,0 +1,28 @@
+spring:
+  application:
+    name: livrapp-api
+
+  datasource:
+    url: jdbc:postgresql://localhost:5432/livrapp
+    username: ${DB_USER:livrapp}
+    password: ${DB_PASSWORD:livrapp}
+
+  jpa:
+    open-in-view: false
+    hibernate:
+      ddl-auto: validate          # Flyway est seul maître du schéma ; Hibernate ne fait que valider
+    properties:
+      hibernate:
+        format_sql: true
+
+  flyway:
+    enabled: true
+    locations: classpath:db/migration
+
+server:
+  port: 8080
+
+logging:
+  level:
+    org.hibernate.SQL: debug
+    org.flywaydb: info
