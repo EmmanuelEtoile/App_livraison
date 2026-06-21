@@ -1,4 +1,4 @@
-package com.Livrapp.api;
+package com.livrapp.api;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
