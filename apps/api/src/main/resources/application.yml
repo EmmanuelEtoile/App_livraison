@@ -1,6 +1,17 @@
 spring:
   application:
     name: livrapp-api
+  mail:
+    host: ${MAIL_HOST:smtp.gmail.com}
+    port: ${MAIL_PORT:587}
+    username: ${MAIL_USERNAME:}
+    password: ${MAIL_PASSWORD:}
+    properties:
+      mail:
+        smtp:
+          auth: true
+          starttls:
+            enable: true
 
   datasource:
     url: jdbc:postgresql://localhost:5432/livrapp
@@ -29,5 +40,14 @@ logging:
 
 app:
   jwt:
-    secret: ${JWT_SECRET:dev-secret-a-changer-32-caracteres-minimum-svp}
-    expiration-ms: 86400000   # 24 heures
+    secret: ${JWT_SECRET:remplace-moi-par-une-cle-d-au-moins-32-caracteres}
+    expiration-ms: 86400000
+  superadmin:
+    email: ${SUPERADMIN_EMAIL:admin@livrapp.cm}
+    phone: ${SUPERADMIN_PHONE:+237600000000}
+    password: ${SUPERADMIN_PASSWORD:ChangeMoi2026!}
+    first-name: ${SUPERADMIN_FIRST_NAME:Super}
+    last-name: ${SUPERADMIN_LAST_NAME:Admin}
+  mail:
+    from: ${MAIL_FROM:no-reply@livrapp.cm}
+    enabled: ${MAIL_ENABLED:false}

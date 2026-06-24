@@ -1,5 +1,6 @@
 package com.livrapp.api.identity.repository;
 
+import com.livrapp.api.identity.domain.Role;
 import com.livrapp.api.identity.domain.User;
 import org.springframework.data.jpa.repository.JpaRepository;
 
@@ -15,4 +16,6 @@ public interface UserRepository extends JpaRepository<User, UUID> {
     boolean existsByEmail(String email);
 
     boolean existsByPhone(String phone);
+
+    boolean existsByRole(Role role);
 }
