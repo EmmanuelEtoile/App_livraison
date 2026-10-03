@@ -3,6 +3,8 @@ package com.asap.api.identity.domain;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
+import org.hibernate.annotations.JdbcTypeCode;
+import org.hibernate.type.SqlTypes;
 import org.locationtech.jts.geom.Point;
 
 import java.math.BigDecimal;
@@ -24,12 +26,18 @@ public class Livreur {
     @JoinColumn(name = "user_id")
     private User user;
 
-    @Column(name = "mode_transport", length = 50)
-    private String modeTransport;
-
     @Enumerated(EnumType.STRING)
     @Column(name = "kyc_status", nullable = false, length = 20)
     private KycStatus kycStatus = KycStatus.PENDING;
+
+    // --- Capacité de transport déclarée au KYC (modèle hybride) ---
+    @Column(name = "has_own_vehicle", nullable = false)
+    private boolean hasOwnVehicle = false;
+
+    // Valeurs issues de l'enum TransportMode (validées côté service/DTO).
+    @JdbcTypeCode(SqlTypes.ARRAY)
+    @Column(name = "transport_modes", columnDefinition = "text[]")
+    private String[] transportModes;
 
     @Column(name = "current_location", columnDefinition = "geography(Point,4326)")
     private Point currentLocation;
