@@ -1,9 +1,9 @@
-# CLAUDE.md — LivrApp
+# CLAUDE.md — ASAP
 
 Ce fichier est lu automatiquement par Claude Code à chaque session. Il définit le contexte, l'architecture et les conventions du projet. Le garder **concis et à jour**.
 
 ## Projet
-LivrApp — plateforme de livraison à la demande pour Yaoundé (Cameroun). Projet de fin de formation ISI ING3, Institut Universitaire Saint Jean. Sept types d'opérations : livraison standard, urgente, programmée, inversée, inter-villes, dépôt point partenaire, ramassage hebdomadaire B2B.
+ASAP — plateforme de livraison à la demande pour Yaoundé (Cameroun). Projet de fin de formation ISI ING3, Institut Universitaire Saint Jean. Sept types d'opérations : livraison standard, urgente, programmée, inversée, inter-villes, dépôt point partenaire, ramassage hebdomadaire B2B.
 
 Les spécifications détaillées sont dans `docs/` (Cahier des Charges Technique v2.0, Cahier d'Analyse, Cahier de Conception). **Ces cahiers font autorité.** En cas de doute, s'y référer et citer la section.
 
@@ -17,7 +17,7 @@ Les spécifications détaillées sont dans `docs/` (Cahier des Charges Technique
 
 ## Structure du dépôt
 ```
-livrapp/
+asap/
   apps/api/           Backend Spring Boot
   apps/mobile/        Flutter (client + livreur)
   apps/dashboard/     Next.js (dashboard admin)
